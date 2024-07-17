@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F3022BB7-0E40-4C80-A495-37FEAF3671AB}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Xceed.Words.NET.Examples</RootNamespace>
+    <AssemblyName>Xceed.Words.NET.Examples</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NETFRAMEWORK</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFRAMEWORK</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Samples\Bookmark\BookmarkSample.cs" />
+    <Compile Include="Samples\Chart\ChartData.cs" />
+    <Compile Include="Samples\Chart\ChartSample.cs" />
+    <Compile Include="Samples\CheckBox\CheckBoxSample.cs" />
+    <Compile Include="Samples\DigitalSignature\DigitalSignatureSample.cs" />
+    <Compile Include="Samples\Document\DocumentSample.cs" />
+    <Compile Include="Samples\Equation\EquationSample.cs" />
+    <Compile Include="Samples\FootnoteEndnote\FootnoteEndnoteSample.cs" />
+    <Compile Include="Samples\HeaderFooter\HeaderFooterSample.cs" />
+    <Compile Include="Samples\Hyperlink\HyperlinkSample.cs" />
+    <Compile Include="Samples\Hyphenation\HyphenationSample.cs" />
+    <Compile Include="Samples\Image\ImageSample.cs" />
+    <Compile Include="Samples\Line\LineSample.cs" />
+    <Compile Include="Samples\List\ListSample.cs" />
+    <Compile Include="Samples\Margin\MarginSample.cs" />
+    <Compile Include="Samples\Miscellaneous\MiscellaneousSample.cs" />
+    <Compile Include="Samples\Paragraph\ParagraphSample.cs" />
+    <Compile Include="Samples\Parallel\ParallelSample.cs" />
+    <Compile Include="Samples\Pdf\PdfSample.cs" />
+    <Compile Include="Samples\Protection\ProtectionSample.cs" />
+    <Compile Include="Samples\Section\SectionSample.cs" />
+    <Compile Include="Samples\Shape\ShapeSample.cs" />
+    <Compile Include="Samples\TableOfContent\TableOfContentSample.cs" />
+    <Compile Include="Samples\Table\TableSample.cs" />
+    <Compile Include="XceedDeploymentLicense.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Samples\Bookmark\Resources\DocumentWithBookmarks.docx" />
+    <None Include="Samples\Chart\Resources\Report.docx" />
+    <None Include="Samples\CheckBox\Resources\DocumentWithCheckBoxes.docx" />
+    <None Include="Samples\DigitalSignature\Resources\CustomCertificate.pfx" />
+    <None Include="Samples\DigitalSignature\Resources\SignedDocument.docx" />
+    <None Include="Samples\Document\Resources\First.docx" />
+    <None Include="Samples\Document\Resources\ReplaceText.docx" />
+    <None Include="Samples\Document\Resources\ReplaceTextWithObjects.docx" />
+    <None Include="Samples\Document\Resources\RtfSample.rtf" />
+    <None Include="Samples\Document\Resources\Second.docx" />
+    <None Include="Samples\Document\Resources\Template-2.docx" />
+    <None Include="Samples\Document\Resources\Template.docx" />
+    <None Include="Samples\List\Resources\Lists.docx" />
+    <None Include="Samples\Protection\Resources\PasswordProtected.docx" />
+    <None Include="Samples\Image\Resources\Input.docx" />
+    <None Include="Samples\List\Resources\TemplateLists.docx" />
+    <None Include="Samples\Hyphenation\Resources\HyphenatedDocument.docx" />
+    <None Include="Samples\Miscellaneous\Resources\TemplateInvoice.docx" />
+    <None Include="Samples\Miscellaneous\Resources\TemplateMailMerge.docx" />
+    <None Include="Samples\Paragraph\Resources\Template.docx" />
+    <None Include="Samples\Paragraph\Resources\TemplateStyledParagraph.docx" />
+    <None Include="Samples\Parallel\Resources\Doc1.docx" />
+    <None Include="Samples\Parallel\Resources\Doc2.docx" />
+    <None Include="Samples\Parallel\Resources\Doc3.docx" />
+    <None Include="Samples\Pdf\Resources\DocumentToConvert.docx" />
+    <None Include="Samples\Pdf\Resources\DocumentToConvertWithUninstalledFont.docx" />
+    <None Include="Samples\Pdf\Resources\The Bugatten.ttf" />
+    <None Include="Samples\TableOfContent\Resources\TOCDocument.docx" />
+    <None Include="Samples\Table\Resources\DocumentWithTemplateTable.docx" />
+    <None Include="Samples\Table\Resources\TemplateTable.docx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Samples\DigitalSignature\Resources\MarkStoneSignature.png" />
+    <Content Include="Samples\DigitalSignature\Resources\TomSawyerSignature.png" />
+    <Content Include="Samples\Document\Resources\2018.jpg" />
+    <Content Include="Samples\Document\Resources\HtmlSample.html" />
+    <Content Include="Samples\FootnoteEndnote\Resources\xceed.png" />
+    <Content Include="Samples\Image\Resources\balloon.jpg" />
+    <Content Include="Samples\Image\Resources\W.png" />
+    <Content Include="Samples\Image\Resources\WordsIcon.png" />
+    <Content Include="Samples\Miscellaneous\Resources\cupcake.png" />
+    <Content Include="Samples\Miscellaneous\Resources\Phone.png" />
+    <Content Include="Samples\Parallel\Resources\potato.jpg" />
+    <Content Include="Samples\Table\Resources\logo_xceed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Xceed.Document.NET.dll">
+      <HintPath>..\Xceed.Document.NET\bin\$(Configuration)\Xceed.Document.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Pdf.dll">
+      <HintPath>..\Xceed.Pdf\bin\$(Configuration)\Xceed.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Words.NET.dll">
+      <HintPath>..\Xceed.Words.NET\bin\$(Configuration)\Xceed.Words.NET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
