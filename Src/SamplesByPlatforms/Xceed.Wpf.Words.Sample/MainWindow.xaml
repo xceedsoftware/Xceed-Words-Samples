@@ -5,10 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Xceed.Wpf.Words.Sample"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Xceed Words.NET Samples"
+        Height="287"
+        Width="700">
   <Grid>
     <StackPanel HorizontalAlignment="Center"
-                VerticalAlignment="Center">
+                VerticalAlignment="Top"
+                Margin="0,50,0,0">
+      <TextBlock Text="Select a button to export data to check how Xceed.Words.NET works!!!"
+                 Margin="10"
+                 FontSize="20" />
       <Button Name="btnGenerateSimpleDoc"
               Content="Generate Simple Document"
               Width="200"

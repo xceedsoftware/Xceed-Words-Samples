@@ -3,13 +3,13 @@ using Xceed.Words.NET;
 
 // Replace the License Key by a valid license.
 Xceed.Words.NET.Licenser.LicenseKey = "XXXXX-XXXXX-XXXXX-YYYY";
-
+Console.Title = "Xceed Words.NET Sample";
 while( true )
 {	
 	Console.WriteLine( "Choose an option:" );
-	Console.WriteLine( "1 - Generate Simple Document" );
-	Console.WriteLine( "2 - Generate List" );
-	Console.WriteLine( "3 - Generate Table" );
+	Console.WriteLine( "1 - To export a document with simple data (3 pages with a normal text inside)." );
+	Console.WriteLine( "2 - To export a document with a numbered lis and bulleted list." );
+	Console.WriteLine( "3 - To export a document with a table." );
 	Console.WriteLine( "0 - Exit" );
 
 	var key = Console.ReadKey().KeyChar;
