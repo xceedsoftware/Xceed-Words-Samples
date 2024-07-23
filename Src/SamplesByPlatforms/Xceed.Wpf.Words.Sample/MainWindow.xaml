@@ -1,0 +1,29 @@
+﻿<Window x:Class="Xceed.Wpf.Words.Sample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Xceed.Wpf.Words.Sample"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+  <Grid>
+    <StackPanel HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+      <Button Name="btnGenerateSimpleDoc"
+              Content="Generate Simple Document"
+              Width="200"
+              Margin="10"
+              Click="btnGenerateSimpleDoc_Click" />
+      <Button Name="btnGenerateListDoc"
+              Content="Generate List Document"
+              Width="200"
+              Margin="10"
+              Click="btnGenerateListDoc_Click" />
+      <Button Name="btnGenerateTableDoc"
+              Content="Generate Table Document"
+              Width="200"
+              Margin="10"
+              Click="btnGenerateTableDoc_Click" />
+    </StackPanel>
+  </Grid>
+</Window>
