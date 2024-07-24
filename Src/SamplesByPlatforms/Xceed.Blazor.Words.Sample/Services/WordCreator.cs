@@ -1,5 +1,4 @@
 ﻿using Microsoft.JSInterop;
-using Xceed.Document.NET;
 using Xceed.Words.NET;
 
 namespace Xceed.Blazor.Words.Sample.Services
