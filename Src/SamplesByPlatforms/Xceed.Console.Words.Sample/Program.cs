@@ -1,19 +1,21 @@
-﻿using System;
+﻿using Pastel;
+using System;
 using Xceed.Words.NET;
 
 // Replace the License Key by a valid license.
 Xceed.Words.NET.Licenser.LicenseKey = "XXXXX-XXXXX-XXXXX-YYYY";
 Console.Title = "Xceed Words.NET Sample";
+bool isopened = false;
 while( true )
-{	
-	Console.WriteLine( "Choose an option:" );
-	Console.WriteLine( "1 - To export a document with simple data (3 pages with a normal text inside)." );
-	Console.WriteLine( "2 - To export a document with a numbered list and bulleted list." );
-	Console.WriteLine( "3 - To export a document with a table." );
-	Console.WriteLine( "0 - Exit" );
-
+{
+	if( !isopened )
+	{
+		DisplayMenu();
+	}
 	var key = Console.ReadKey().KeyChar;
 	Console.Clear();
+	isopened = true;
+	DisplayMenu();
 
 	switch( key )
 	{
@@ -29,7 +31,7 @@ while( true )
 		case '0':
 			return;
 		default:
-			Console.WriteLine( "Invalid option. Try again." );
+			Console.WriteLine( "Invalid option. Try again.".Pastel( "#ff0000" ) );
 			break;
 	}
 }
@@ -58,7 +60,7 @@ void GenerateSimpleDocument()
 		.FontSize( 12 );
 
 	doc.Save();
-	Console.WriteLine( $"Document saved to {filePath}" );
+	Console.WriteLine( $"Document saved to {filePath}".Pastel( "#33B0A4" ) );
 }
 
 void GenerateListDocument()
@@ -85,7 +87,7 @@ void GenerateListDocument()
 		.FontSize( 12 );
 
 	doc.Save();
-	Console.WriteLine( $"Document saved to {filePath}" );
+	Console.WriteLine( $"Document saved to {filePath}".Pastel( "#33B0A4" ) );
 }
 
 void GenerateTableDocument()
@@ -114,5 +116,14 @@ void GenerateTableDocument()
 
 	doc.InsertTable( table );
 	doc.Save();
-	Console.WriteLine( $"Document saved to {filePath}" );
+	Console.WriteLine( $"Document saved to {filePath}".Pastel( "#33B0A4" ) );
 }
+
+static void DisplayMenu()
+{
+	Console.WriteLine( "Choose an option:".Pastel( "#FE671A" ) );
+	Console.WriteLine( "1 - To export a document with simple data (3 pages with a normal text inside).".Pastel( "#FE671A" ) );
+	Console.WriteLine( "2 - To export a document with a numbered list and bulleted list.".Pastel( "#FE671A" ) );
+	Console.WriteLine( "3 - To export a document with a table.".Pastel( "#FE671A" ) );
+	Console.WriteLine( "0 - Exit".Pastel( "#FE671A" ) );
+}	

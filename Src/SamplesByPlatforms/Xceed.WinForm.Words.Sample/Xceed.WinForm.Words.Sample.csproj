@@ -84,5 +84,8 @@
       <Version>3.0.24152.1219</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="logox.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,11 +10,11 @@ namespace Xceed.WinForm.Words.Sample
 		public Form1()
 		{
 			InitializeComponent();
-			// Replace the License Key by a valid license.
-			Xceed.Words.NET.Licenser.LicenseKey = "XXXXX-XXXXX-XXXXX-YYYY";
-		}
+            // Replace the License Key by a valid license.
+            Xceed.Words.NET.Licenser.LicenseKey = "XXXXX-XXXXX-XXXXX-YYYY";
+        }
 
-		private void button1_Click( object sender, EventArgs e )
+        private void button1_Click( object sender, EventArgs e )
 		{
 			SaveFileDialog saveFileDialog = new SaveFileDialog();
 			saveFileDialog.Filter = "Word Document|*.docx";

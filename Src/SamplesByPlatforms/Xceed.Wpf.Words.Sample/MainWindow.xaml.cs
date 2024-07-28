@@ -9,11 +9,11 @@ namespace Xceed.Wpf.Words.Sample
 		public MainWindow()
 		{
 			InitializeComponent();
-			// Replace the License Key by a valid license.
-			Xceed.Words.NET.Licenser.LicenseKey = "XXXXX-XXXXX-XXXXX-YYYY";
-		}
+            // Replace the License Key by a valid license.
+            Xceed.Words.NET.Licenser.LicenseKey = "XXXXX-XXXXX-XXXXX-YYYY";
+        }
 
-		private void btnGenerateSimpleDoc_Click( object sender, RoutedEventArgs e )
+        private void btnGenerateSimpleDoc_Click( object sender, RoutedEventArgs e )
 		{
 			SaveFileDialog saveFileDialog = new SaveFileDialog
 			{
