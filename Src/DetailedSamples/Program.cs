@@ -30,6 +30,7 @@ namespace Xceed.Words.NET.Examples
 #if !BLUEPRINT
       XceedDeploymentLicense.SetLicense();
 #endif
+      Xceed.Words.NET.Licenser.LicenseKey = "WDN30-ARYH7-S7KEP-C4WA";
 
       var version = Assembly.GetExecutingAssembly().GetName().Version;
       var versionNumber = version.Major + "." + version.Minor;

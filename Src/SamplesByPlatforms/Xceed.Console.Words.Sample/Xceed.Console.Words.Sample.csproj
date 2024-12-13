@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Pastel" Version="5.1.0" />
+    <PackageReference Include="Pastel" Version="6.0.1" />
     <PackageReference Include="Xceed.Words.NET" Version="3.0.24152.1219" />
   </ItemGroup>
 

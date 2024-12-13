@@ -9,7 +9,7 @@
         Background="#101010"
         FontWeight="Bold"
         Foreground="White"
-        Icon="logox.ico"
+        Icon="/logox.ico"
         Height="310"
         Width="700">
   <Grid>
