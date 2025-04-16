@@ -1,246 +1,37 @@
-name: Build and Publish to Public Repository
+name: Sync SamplesByPlatforms to Private Repo
+
 on:
   push:
-    branches: [ "main" ]
-    tags:
-      - 'v*'
-  workflow_dispatch:
+    branches: [ main, master ]
+    paths:
+      - 'Src/SamplesByPlatforms/**'
 
 jobs:
-  build:
-    runs-on: windows-latest
-    
+  sync:
+    runs-on: ubuntu-latest
     steps:
-    - name: Checkout private repository
-      uses: actions/checkout@v4
-      
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 9.0.x
-        
-    # ===== WPF SAMPLE BUILD =====
-    - name: Restore dependencies (WPF)
-      run: dotnet restore Xceed.Wpf.Words.Sample/Xceed.Wpf.Words.Sample.csproj
-    
-    - name: Replace License Key (WPF)
-      run: |
-        $content = Get-Content -Path .\Xceed.Wpf.Words.Sample\MainWindow.xaml.cs -Raw
-        $content = $content -replace 'LICENSE_KEY_PLACEHOLDER', '${{ secrets.WORDS_LICENSE }}'
-        Set-Content -Path .\Xceed.Wpf.Words.Sample\MainWindow.xaml.cs -Value $content
-      shell: pwsh
-      
-    - name: Build (WPF)
-      run: dotnet build Xceed.Wpf.Words.Sample/Xceed.Wpf.Words.Sample.csproj --configuration Release --no-restore
-      
-    - name: Publish (WPF)
-      run: dotnet publish Xceed.Wpf.Words.Sample/Xceed.Wpf.Words.Sample.csproj -c Release -o publish-wpf --self-contained true -r win-x64 /p:PublishSingleFile=true
-      
-    - name: Zip the published files (WPF)
-      run: |
-        cd publish-wpf
-        Compress-Archive -Path * -DestinationPath ../Xceed.Wpf.Words.Sample.zip
-      shell: pwsh
-      
-    # ===== CONSOLE SAMPLE BUILD =====
-    - name: Restore dependencies (Console)
-      run: dotnet restore Xceed.Console.Words.Sample/Xceed.Console.Words.Sample.csproj
-    
-    - name: Replace License Key (Console)
-      run: |
-        $content = Get-Content -Path .\Xceed.Console.Words.Sample\Program.cs -Raw
-        $content = $content -replace 'LICENSE_KEY_PLACEHOLDER', '${{ secrets.WORDS_LICENSE }}'
-        Set-Content -Path .\Xceed.Console.Words.Sample\Program.cs -Value $content
-      shell: pwsh
-      
-    - name: Build (Console)
-      run: dotnet build Xceed.Console.Words.Sample/Xceed.Console.Words.Sample.csproj --configuration Release --no-restore
-      
-    - name: Publish (Console)
-      run: dotnet publish Xceed.Console.Words.Sample/Xceed.Console.Words.Sample.csproj -c Release -o publish-console --self-contained true -r win-x64 /p:PublishSingleFile=true
-      
-    - name: Zip the published files (Console)
-      run: |
-        cd publish-console
-        Compress-Archive -Path * -DestinationPath ../Xceed.Console.Words.Sample.zip
-      shell: pwsh
-      
-    # ===== WINFORMS SAMPLE BUILD =====
-    - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v1.1
-      with:
-        vs-version: '16.0'  # Opcional: especifica la versión de Visual Studio si es necesario
+      - name: Checkout source repo
+        uses: actions/checkout@v3
+        with:
+          path: source
 
-    - name: Restore dependencies (WinForms)
-      run: nuget restore Xceed.WinForm.Words.Sample/Xceed.WinForm.Words.Sample.csproj
-    
-    - name: Replace License Key (WinForms)
-      run: |
-        $content = Get-Content -Path .\Xceed.WinForm.Words.Sample\Form1.cs -Raw
-        $content = $content -replace 'LICENSE_KEY_PLACEHOLDER', '${{ secrets.WORDS_LICENSE }}'
-        Set-Content -Path .\Xceed.WinForm.Words.Sample\Form1.cs -Value $content
-      shell: pwsh
-      
-    - name: Build (WinForms)
-      run: msbuild Xceed.WinForm.Words.Sample/Xceed.WinForm.Words.Sample.csproj /p:Configuration=Release
-      
-    - name: Zip the published files (WinForms)
-      run: |
-        Compress-Archive -Path Xceed.WinForm.Words.Sample\bin\Release\* -DestinationPath Xceed.WinForm.Words.Sample.zip
-      shell: pwsh
+      - name: Checkout target repo
+        uses: actions/checkout@v3
+        with:
+          repository: xceedsoftware/xceed-words-samplesbyplatforms
+          token: ${{ secrets.PRIVATE_REPO_PAT }}
+          path: target
 
-    # ===== BLAZOR SAMPLE BUILD =====
-    - name: Restore dependencies (Blazor)
-      run: dotnet restore Xceed.Blazor.Words.Sample/Xceed.Blazor.Words.Sample.csproj
-    
-    - name: Replace License Key (Blazor)
-      run: |
-        $content = Get-Content -Path .\Xceed.Blazor.Words.Sample\Program.cs -Raw
-        $content = $content -replace 'LICENSE_KEY_PLACEHOLDER', '${{ secrets.WORDS_LICENSE }}'
-        Set-Content -Path .\Xceed.Blazor.Words.Sample\Program.cs -Value $content
-      shell: pwsh
-    
-    - name: Update base href in index.html (Blazor)
-      run: |
-        $indexPath = ".\Xceed.Blazor.Words.Sample\wwwroot\index.html"
-        $content = Get-Content -Path $indexPath -Raw
-        $content = $content -replace '<base href=".*" />', '<base href="https://xceedsoftware.github.io/Xceed-Words-Samples/" />'
-        Set-Content -Path $indexPath -Value $content
-      shell: pwsh
-    
-    - name: Build (Blazor)
-      run: dotnet build Xceed.Blazor.Words.Sample/Xceed.Blazor.Words.Sample.csproj --configuration Release --no-restore
-    
-    - name: Publish (Blazor)
-      run: dotnet publish Xceed.Blazor.Words.Sample/Xceed.Blazor.Words.Sample.csproj -c Release -o publish-blazor
-    
-    - name: Zip the published files (Blazor)
-      run: |
-        cd publish-blazor
-        Compress-Archive -Path * -DestinationPath ../Xceed.Blazor.Words.Sample.zip
-      shell: pwsh
-      
-    # ===== VERSIONING AND PUBLIC REPO HANDLING =====
-    - name: Set version info
-      id: version
-      run: |
-        if ($env:GITHUB_REF.StartsWith("refs/tags/")) {
-          $VERSION = $env:GITHUB_REF.Substring(10)
-        } else {
-          $VERSION = "build-$(Get-Date -Format 'yyyy.MM.dd-HHmm')"
-        }
-        echo "VERSION=$VERSION" >> $env:GITHUB_OUTPUT
-      shell: pwsh
-    
-    - name: Setup public repository
-      id: setup-public-repo
-      run: |
-        mkdir -p public-repo
-        cd public-repo
-        
-        git config --global user.name "GitHub Actions Bot"
-        git config --global user.email "<>"
-        
-        echo "Cloning public repo..."
-        if (git clone https://x-access-token:${{ secrets.DEPLOY_KEY }}@github.com/xceedsoftware/Xceed-Words-Samples.git . 2>&1) {
-          echo "Repositorio clonado exitosamente"
-          git checkout main 2>$null || git checkout -b main
-          echo "repo_exists=true" >> $env:GITHUB_OUTPUT
-        } else {
-          echo "El repositorio no existe o no tiene ramas, inicializándolo..."
-          git init
-          echo "# Xceed Words Sample Applications" > README.md
-          echo "Este repositorio contiene versiones compiladas de las aplicaciones de ejemplo de Xceed Words (WPF, Console, y WinForms)." >> README.md
-          echo "" >> README.md
-          echo "## Releases" >> README.md
-          mkdir -p releases
-          git add README.md
-          git commit -m "Initial commit"
-          git branch -M main
-          git remote add origin https://x-access-token:${{ secrets.DEPLOY_KEY }}@github.com/xceedsoftware/Xceed-Words-Samples.git
-          git push -u origin main
-          echo "repo_exists=false" >> $env:GITHUB_OUTPUT
-        }
-      shell: pwsh
-        
-    - name: Copy release files to public repository
-      run: |
-        $VERSION = "${{ steps.version.outputs.VERSION }}"
-        mkdir -p "public-repo/releases/$VERSION"
-        
-        # Copiar los tres archivos ZIP
-        cp Xceed.Wpf.Words.Sample.zip "public-repo/releases/$VERSION/"
-        cp Xceed.Console.Words.Sample.zip "public-repo/releases/$VERSION/"
-        cp Xceed.WinForm.Words.Sample.zip "public-repo/releases/$VERSION/"
-        cp Xceed.Blazor.Words.Sample.zip "public-repo/releases/$VERSION/"
-        
-        if ($env:GITHUB_REF.StartsWith("refs/tags/")) {
-          $VERSION | Set-Content -Path "public-repo/latest.txt" -Force
-        }
-      shell: pwsh
-      
-    - name: Commit and push to public repository
-      run: |
-        cd public-repo
-        git add .
-        git commit -m "Release ${{ steps.version.outputs.VERSION }}"
-        git push origin main
-      shell: pwsh
-      
-    # ===== CREATE RELEASES WITH ALL THREE ASSETS =====
-    - name: Create Release in public repository
-      env:
-        GITHUB_TOKEN: ${{ secrets.DEPLOY_KEY }}
-      run: |
-        # Instalar jq si no está disponible
-        apt-get update && apt-get install -y jq
-        
-        # Crear la release a través de la API de GitHub
-        RESPONSE=$(curl -X POST \
-          -H "Authorization: token $GITHUB_TOKEN" \
-          -H "Accept: application/vnd.github.v3+json" \
-          https://api.github.com/repos/xceedsoftware/Xceed-Words-Samples/releases \
-          -d '{
-            "tag_name": "auto-${{ steps.version.outputs.VERSION }}",
-            "name": "Xceed Words Samples Release ${{ steps.version.outputs.VERSION }}",
-            "body": "Release for Xceed Words Samples version ${{ steps.version.outputs.VERSION }} (WPF, Console, and WinForms)",
-            "draft": false,
-            "prerelease": false,
-            "make_latest": "true"
-          }')
-        
-        # Extraer el ID de la release creada
-        RELEASE_ID=$(echo $RESPONSE | jq -r '.id')
-        
-        # Subir los archivos ZIP como assets
-        # WPF Sample
-        curl -X POST \
-          -H "Authorization: token $GITHUB_TOKEN" \
-          -H "Content-Type: application/zip" \
-          -H "Accept: application/vnd.github.v3+json" \
-          --data-binary @Xceed.Wpf.Words.Sample.zip \
-          "https://uploads.github.com/repos/xceedsoftware/Xceed-Words-Samples/releases/$RELEASE_ID/assets?name=Xceed.Wpf.Words.Sample.zip"
-        
-        # Console Sample
-        curl -X POST \
-          -H "Authorization: token $GITHUB_TOKEN" \
-          -H "Content-Type: application/zip" \
-          -H "Accept: application/vnd.github.v3+json" \
-          --data-binary @Xceed.Console.Words.Sample.zip \
-          "https://uploads.github.com/repos/xceedsoftware/Xceed-Words-Samples/releases/$RELEASE_ID/assets?name=Xceed.Console.Words.Sample.zip"
-        
-        # WinForms Sample
-        curl -X POST \
-          -H "Authorization: token $GITHUB_TOKEN" \
-          -H "Content-Type: application/zip" \
-          -H "Accept: application/vnd.github.v3+json" \
-          --data-binary @Xceed.WinForm.Words.Sample.zip \
-          "https://uploads.github.com/repos/xceedsoftware/Xceed-Words-Samples/releases/$RELEASE_ID/assets?name=Xceed.WinForm.Words.Sample.zip"
-
-        curl -X POST \
-          -H "Authorization: token $GITHUB_TOKEN" \
-          -H "Content-Type: application/zip" \
-          -H "Accept: application/vnd.github.v3+json" \
-          --data-binary @Xceed.Blazor.Words.Sample.zip \
-          "https://uploads.github.com/repos/xceedsoftware/Xceed-Words-Samples/releases/$RELEASE_ID/assets?name=Xceed.Blazor.Words.Sample.zip"  
-      shell: bash
+      - name: Copy files
+        run: |
+          rm -rf target/*
+          cp -r source/Src/SamplesByPlatforms/* target/
+          
+      - name: Commit and push changes
+        run: |
+          cd target
+          git config user.name "GitHub Action"
+          git config user.email "action@github.com"
+          git add .
+          git diff --quiet && git diff --staged --quiet || git commit -m "Sync from public repo: ${{ github.event.after }}"
+          git push
