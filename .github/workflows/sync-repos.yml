@@ -88,7 +88,7 @@ jobs:
       run: |
         Compress-Archive -Path Xceed.WinForm.Words.Sample\bin\Release\* -DestinationPath Xceed.WinForm.Words.Sample.zip
       shell: pwsh
-      
+
     # ===== BLAZOR SAMPLE BUILD =====
     - name: Restore dependencies (Blazor)
       run: dotnet restore Xceed.Blazor.Words.Sample/Xceed.Blazor.Words.Sample.csproj
@@ -99,21 +99,21 @@ jobs:
         $content = $content -replace 'LICENSE_KEY_PLACEHOLDER', '${{ secrets.WORDS_LICENSE }}'
         Set-Content -Path .\Xceed.Blazor.Words.Sample\Program.cs -Value $content
       shell: pwsh
-      
+    
     - name: Update base href in index.html (Blazor)
       run: |
         $indexPath = ".\Xceed.Blazor.Words.Sample\wwwroot\index.html"
         $content = Get-Content -Path $indexPath -Raw
-        $content = $content -replace '<base href=".*" />', '<base href="/Xceed-Words-Samples/" />'
+        $content = $content -replace '<base href=".*" />', '<base href="https://xceedsoftware.github.io/Xceed-Words-Samples/" />'
         Set-Content -Path $indexPath -Value $content
       shell: pwsh
-      
+    
     - name: Build (Blazor)
       run: dotnet build Xceed.Blazor.Words.Sample/Xceed.Blazor.Words.Sample.csproj --configuration Release --no-restore
-      
+    
     - name: Publish (Blazor)
       run: dotnet publish Xceed.Blazor.Words.Sample/Xceed.Blazor.Words.Sample.csproj -c Release -o publish-blazor
-      
+    
     - name: Zip the published files (Blazor)
       run: |
         cd publish-blazor
@@ -168,7 +168,7 @@ jobs:
         $VERSION = "${{ steps.version.outputs.VERSION }}"
         mkdir -p "public-repo/releases/$VERSION"
         
-        # Copiar los cuatro archivos ZIP
+        # Copiar los tres archivos ZIP
         cp Xceed.Wpf.Words.Sample.zip "public-repo/releases/$VERSION/"
         cp Xceed.Console.Words.Sample.zip "public-repo/releases/$VERSION/"
         cp Xceed.WinForm.Words.Sample.zip "public-repo/releases/$VERSION/"
@@ -203,7 +203,7 @@ jobs:
           -d '{
             "tag_name": "auto-${{ steps.version.outputs.VERSION }}",
             "name": "Xceed Words Samples Release ${{ steps.version.outputs.VERSION }}",
-            "body": "Release for Xceed Words Samples version ${{ steps.version.outputs.VERSION }} (WPF, Console, WinForms, and Blazor)",
+            "body": "Release for Xceed Words Samples version ${{ steps.version.outputs.VERSION }} (WPF, Console, and WinForms)",
             "draft": false,
             "prerelease": false,
             "make_latest": "true"
@@ -236,12 +236,11 @@ jobs:
           -H "Accept: application/vnd.github.v3+json" \
           --data-binary @Xceed.WinForm.Words.Sample.zip \
           "https://uploads.github.com/repos/xceedsoftware/Xceed-Words-Samples/releases/$RELEASE_ID/assets?name=Xceed.WinForm.Words.Sample.zip"
-          
-        # Blazor Sample
+
         curl -X POST \
           -H "Authorization: token $GITHUB_TOKEN" \
           -H "Content-Type: application/zip" \
           -H "Accept: application/vnd.github.v3+json" \
           --data-binary @Xceed.Blazor.Words.Sample.zip \
-          "https://uploads.github.com/repos/xceedsoftware/Xceed-Words-Samples/releases/$RELEASE_ID/assets?name=Xceed.Blazor.Words.Sample.zip"
+          "https://uploads.github.com/repos/xceedsoftware/Xceed-Words-Samples/releases/$RELEASE_ID/assets?name=Xceed.Blazor.Words.Sample.zip"  
       shell: bash
