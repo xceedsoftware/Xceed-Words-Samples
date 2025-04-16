@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<OutputType>WinExe</OutputType>
-		<TargetFrameworks>net8.0-windows;net9.0-windows;net48</TargetFrameworks>
+		<TargetFramework>net9.0-windows</TargetFramework>
 		<AssemblyTitle>Xceed.Wpf.Words.Sample</AssemblyTitle>
 		<AssemblyCompany>Logiciels Xceed</AssemblyCompany>
 		<AssemblyProduct>Xceed.Wpf.Words.Sample</AssemblyProduct>
