@@ -5,13 +5,11 @@ VisualStudioVersion = 17.10.35004.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xceed.WinForm.Words.Sample", "Xceed.WinForm.Words.Sample\Xceed.WinForm.Words.Sample.csproj", "{7910187C-B306-4607-BE31-00380D089CBF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xceed.Blazor.Words.Sample", "Xceed.Blazor.Words.Sample\Xceed.Blazor.Words.Sample.csproj", "{69E09A22-9169-4A23-9199-F48B9CE6C87B}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xceed.Console.Words.Sample", "Xceed.Console.Words.Sample\Xceed.Console.Words.Sample.csproj", "{1C867B7D-9D67-4877-8B59-BE2162063555}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xceed.Wpf.Words.Sample", "Xceed.Wpf.Words.Sample\Xceed.Wpf.Words.Sample.csproj", "{4168E239-1EF9-4751-9784-A5CA937C1917}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xceed.BlazorWASM.Words.Sample", "Xceed.BlazorWASM.Words.Sample\Xceed.BlazorWASM.Words.Sample.csproj", "{8662E82C-B59A-4243-B8C4-DE7A0879060F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xceed.Blazor.Words.Sample", "Xceed.Blazor.Words.Sample\Xceed.Blazor.Words.Sample.csproj", "{6BAE1ED4-65DD-F0A1-5C9E-C28670EEEE56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{7910187C-B306-4607-BE31-00380D089CBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7910187C-B306-4607-BE31-00380D089CBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7910187C-B306-4607-BE31-00380D089CBF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{69E09A22-9169-4A23-9199-F48B9CE6C87B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{69E09A22-9169-4A23-9199-F48B9CE6C87B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{69E09A22-9169-4A23-9199-F48B9CE6C87B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{69E09A22-9169-4A23-9199-F48B9CE6C87B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1C867B7D-9D67-4877-8B59-BE2162063555}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1C867B7D-9D67-4877-8B59-BE2162063555}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C867B7D-9D67-4877-8B59-BE2162063555}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -35,10 +29,10 @@ Global
 		{4168E239-1EF9-4751-9784-A5CA937C1917}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4168E239-1EF9-4751-9784-A5CA937C1917}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4168E239-1EF9-4751-9784-A5CA937C1917}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8662E82C-B59A-4243-B8C4-DE7A0879060F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8662E82C-B59A-4243-B8C4-DE7A0879060F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8662E82C-B59A-4243-B8C4-DE7A0879060F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8662E82C-B59A-4243-B8C4-DE7A0879060F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BAE1ED4-65DD-F0A1-5C9E-C28670EEEE56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BAE1ED4-65DD-F0A1-5C9E-C28670EEEE56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BAE1ED4-65DD-F0A1-5C9E-C28670EEEE56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BAE1ED4-65DD-F0A1-5C9E-C28670EEEE56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

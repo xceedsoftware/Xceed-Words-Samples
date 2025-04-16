@@ -1,29 +1,15 @@
-using Xceed.Blazor.Words.Sample.Components;
+using Microsoft.AspNetCore.Components.Web;
+using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Xceed.Blazor.Words.Sample;
 using Xceed.Blazor.Words.Sample.Services;
 
 // Replace the License Key by a valid license.
-Xceed.Words.NET.Licenser.LicenseKey = "XXXXX-XXXXX-XXXXX-YYYY";
+Xceed.Words.NET.Licenser.LicenseKey = "WDN30-ARYH7-S7KEP-C4WA";
 
-var builder = WebApplication.CreateBuilder( args );
+var builder = WebAssemblyHostBuilder.CreateDefault( args );
+builder.RootComponents.Add<App>( "#app" );
+builder.RootComponents.Add<HeadOutlet>( "head::after" );
 
-// Add services to the container.
-builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents();
-
+builder.Services.AddScoped( sp => new HttpClient { BaseAddress = new Uri( builder.HostEnvironment.BaseAddress ) } );
 builder.Services.AddScoped<WordCreator>();
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if( !app.Environment.IsDevelopment() )
-{
-  app.UseExceptionHandler( "/Error", createScopeForErrors: true );
-}
-
-app.UseStaticFiles();
-app.UseAntiforgery();
-
-app.MapRazorComponents<App>()
-    .AddInteractiveServerRenderMode();
-
-app.Run();
+await builder.Build().RunAsync();
