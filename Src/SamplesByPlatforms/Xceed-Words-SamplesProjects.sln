@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xceed.Console.Words.Sample"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xceed.Wpf.Words.Sample", "Xceed.Wpf.Words.Sample\Xceed.Wpf.Words.Sample.csproj", "{4168E239-1EF9-4751-9784-A5CA937C1917}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xceed.BlazorWASM.Words.Sample", "Xceed.BlazorWASM.Words.Sample\Xceed.BlazorWASM.Words.Sample.csproj", "{8662E82C-B59A-4243-B8C4-DE7A0879060F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{4168E239-1EF9-4751-9784-A5CA937C1917}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4168E239-1EF9-4751-9784-A5CA937C1917}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4168E239-1EF9-4751-9784-A5CA937C1917}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8662E82C-B59A-4243-B8C4-DE7A0879060F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8662E82C-B59A-4243-B8C4-DE7A0879060F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8662E82C-B59A-4243-B8C4-DE7A0879060F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8662E82C-B59A-4243-B8C4-DE7A0879060F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

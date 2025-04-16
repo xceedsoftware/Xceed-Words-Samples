@@ -86,6 +86,7 @@ namespace Xceed.Words.NET.Examples
         document.InsertParagraph( "Student completes work neatly\t\t\t\t\t\t\t" );
         // Create a checkBox.
         var checkBox = document.AddCheckBox( true );
+
         // Add the checkBox to the last paragraph of the document.
         var p = document.Paragraphs.Last();        
         p.AppendCheckBox( checkBox );
