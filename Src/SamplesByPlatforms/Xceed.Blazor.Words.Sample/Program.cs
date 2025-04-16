@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Xceed.Blazor.Words.Sample;
 using Xceed.Blazor.Words.Sample.Services;
 
-// Replace the License Key by a valid license. Testing deploy
+// Replace the License Key by a valid license. Testing deployment will not work without a valid license key.
 Xceed.Words.NET.Licenser.LicenseKey = "LICENSE_KEY_PLACEHOLDER";
 
 var builder = WebAssemblyHostBuilder.CreateDefault( args );
