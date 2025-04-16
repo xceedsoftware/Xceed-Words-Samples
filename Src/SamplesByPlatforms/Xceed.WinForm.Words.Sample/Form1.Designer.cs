@@ -40,9 +40,9 @@
       this.button1.BackColor = System.Drawing.Color.Black;
       this.button1.Location = new System.Drawing.Point(224, 83);
       this.button1.Name = "button1";
-      this.button1.Size = new System.Drawing.Size(204, 36);
+      this.button1.Size = new System.Drawing.Size(177, 36);
       this.button1.TabIndex = 0;
-      this.button1.Text = "Generate Simple document (Changed)";
+      this.button1.Text = "Generate Simple document";
       this.button1.UseVisualStyleBackColor = false;
       this.button1.Click += new System.EventHandler(this.button1_Click);
       // 

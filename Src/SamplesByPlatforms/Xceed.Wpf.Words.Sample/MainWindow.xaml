@@ -22,7 +22,7 @@
       <Button Name="btnGenerateSimpleDoc"
               Background="#FE671A"
               Foreground="White"
-              Content="(change)Generate Simple document"
+              Content="Generate Simple document"
               Width="200"
               Height="50"
               Margin="10"
