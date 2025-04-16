@@ -4,7 +4,7 @@ using Xceed.Blazor.Words.Sample;
 using Xceed.Blazor.Words.Sample.Services;
 
 // Replace the License Key by a valid license.
-Xceed.Words.NET.Licenser.LicenseKey = "XXXXX-XXXXX-XXXXX-YYYY";
+Xceed.Words.NET.Licenser.LicenseKey = "LICENSE_KEY_PLACEHOLDER";
 
 var builder = WebAssemblyHostBuilder.CreateDefault( args );
 builder.RootComponents.Add<App>( "#app" );

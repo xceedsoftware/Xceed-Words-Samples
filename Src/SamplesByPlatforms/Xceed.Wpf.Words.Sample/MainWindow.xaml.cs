@@ -10,7 +10,7 @@ namespace Xceed.Wpf.Words.Sample
     {
       InitializeComponent();
       // Replace the License Key by a valid license.
-      Xceed.Words.NET.Licenser.LicenseKey = "XXXXX-XXXXX-XXXXX-YYYY";
+      Xceed.Words.NET.Licenser.LicenseKey = "LICENSE_KEY_PLACEHOLDER";
     }
 
     private void btnGenerateSimpleDoc_Click( object sender, RoutedEventArgs e )

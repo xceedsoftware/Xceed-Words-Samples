@@ -3,7 +3,7 @@ using System;
 using Xceed.Words.NET;
 
 // Replace the License Key by a valid license.
-Xceed.Words.NET.Licenser.LicenseKey = "XXXXX-XXXXX-XXXXX-YYYY";
+Xceed.Words.NET.Licenser.LicenseKey = "LICENSE_KEY_PLACEHOLDER";
 Console.Title = "Xceed Words.NET Sample";
 bool isopened = false;
 while( true )
