@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Xceed.Blazor.Words.Sample",
   "resources": {
-    "hash": "sha256-tamRqYuZjhKpTxcHl0Rua00B2nuklsLEkdGf7NhjS8s=",
+    "hash": "sha256-q5nY6REXob40g11oZe5SwLMh/a4SF4Vs/kpMxWiwnG4=",
     "fingerprinting": {
       "Microsoft.AspNetCore.Components.gjulhegvw1.wasm": "Microsoft.AspNetCore.Components.wasm",
       "Microsoft.AspNetCore.Components.Web.horg9ede60.wasm": "Microsoft.AspNetCore.Components.Web.wasm",
@@ -64,7 +64,7 @@
       "System.Xml.Linq.omrm9aobo0.wasm": "System.Xml.Linq.wasm",
       "System.Xml.ReaderWriter.f1u1dmj178.wasm": "System.Xml.ReaderWriter.wasm",
       "System.Xml.XDocument.k4fhx5bbp6.wasm": "System.Xml.XDocument.wasm",
-      "Xceed.Blazor.Words.Sample.1nun0wtq9l.wasm": "Xceed.Blazor.Words.Sample.wasm",
+      "Xceed.Blazor.Words.Sample.x7rl6xdrsg.wasm": "Xceed.Blazor.Words.Sample.wasm",
       "Xceed.Document.NET.egozghmt6i.wasm": "Xceed.Document.NET.wasm",
       "Xceed.PDF.NET.pk9qjq35ax.wasm": "Xceed.PDF.NET.wasm",
       "Xceed.Words.NET.9nvr2gb6d0.wasm": "Xceed.Words.NET.wasm",
@@ -154,7 +154,7 @@
       "System.Xml.Linq.omrm9aobo0.wasm": "sha256-YIafJK5Imy94JBPwVefO7XwTTr6Wrdt8J4cuwLfDjV8=",
       "System.Xml.ReaderWriter.f1u1dmj178.wasm": "sha256-rfyD2IBBbkOelhS4Vfzq8cvf+YMclOkqgGwdUsTCkKI=",
       "System.Xml.XDocument.k4fhx5bbp6.wasm": "sha256-1MtyVDhxvxYhz3d8vxsydxXKpp+L7P3NeU9OIYyoEFw=",
-      "Xceed.Blazor.Words.Sample.1nun0wtq9l.wasm": "sha256-3cr5kMdhThZkwqhX+4TxHO5stBwUxOsvFev6zbLVH78=",
+      "Xceed.Blazor.Words.Sample.x7rl6xdrsg.wasm": "sha256-Dfc4B2HAyalispCqmooLWIAx+uWSat2r4RqZ400J6bg=",
       "Xceed.Document.NET.egozghmt6i.wasm": "sha256-jvpuCPHacTkYSF1VN+x9h3V04ZCya7XPl4ppWuc8RFQ=",
       "Xceed.PDF.NET.pk9qjq35ax.wasm": "sha256-B0JvVTtetfPzzz5wQ7HeqRPeta8HZKxucVB9oS8PnkU=",
       "Xceed.Words.NET.9nvr2gb6d0.wasm": "sha256-C3XG8Sh2VbeRUFPspYL/V8ELwVHV6xl82kZdzQ0rvHY="
