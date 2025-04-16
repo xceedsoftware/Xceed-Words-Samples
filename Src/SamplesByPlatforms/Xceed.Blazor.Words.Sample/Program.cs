@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Xceed.Blazor.Words.Sample;
 using Xceed.Blazor.Words.Sample.Services;
 
-// Replace the License Key by a valid license.
+// Replace the License Key by a valid license, change the values.
 Xceed.Words.NET.Licenser.LicenseKey = "XXXXX-XXXXX-XXXXX-YYYY";
 
 var builder = WebAssemblyHostBuilder.CreateDefault( args );
