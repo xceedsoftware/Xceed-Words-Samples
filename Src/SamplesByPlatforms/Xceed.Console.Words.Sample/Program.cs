@@ -122,7 +122,7 @@ void GenerateTableDocument()
 static void DisplayMenu()
 {
 	Console.WriteLine( "Choose an option:".Pastel( "#FE671A" ) );
-	Console.WriteLine( "1 - To export a document with simple data (3 pages with a normal text inside).".Pastel( "#FE671A" ) );
+	Console.WriteLine( "1 - (Changed)To export a document with simple data (3 pages with a normal text inside).".Pastel( "#FE671A" ) );
 	Console.WriteLine( "2 - To export a document with a numbered list and bulleted list.".Pastel( "#FE671A" ) );
 	Console.WriteLine( "3 - To export a document with a table.".Pastel( "#FE671A" ) );
 	Console.WriteLine( "0 - Exit".Pastel( "#FE671A" ) );
