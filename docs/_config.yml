@@ -1,3 +1,0 @@
-# GitHub Pages configuration
-permalink: pretty
-exclude: ['README.md', 'releases/', 'latest.txt']
