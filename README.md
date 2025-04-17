@@ -8,6 +8,8 @@ This repository contains a variety of sample applications to help you get starte
 
 [![See Demo](https://img.shields.io/badge/Live_Demo-▶-brightgreen)](https://xceedsoftware.github.io/Xceed-Words-Samples/)
 
+[![Visitar página](https://img.shields.io/badge/Ver%20Página-2ea44f?style=flat-square)](https://xceedsoftware.github.io/Xceed-Words-Samples/)
+
 ## Overview
 
 Xceed Words for .NET allows you to create or manipulate Microsoft Word documents from your .NET applications, without requiring Word or Office to be installed. Convert Word documents to PDF (not all Word elements are supported; use the trial period to validate all required elements do get converted). Fast and lightweight. Widely used and backed by a responsive support and development team whose sole ambition is your complete satisfaction.
