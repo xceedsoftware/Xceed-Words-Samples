@@ -6,9 +6,9 @@
 
 This repository contains a variety of sample applications to help you get started with using the Xceed Words for .NET in your own projects.
 
-[![See Demo](https://img.shields.io/badge/Simple Live_Demo-▶-brightgreen)](https://xceedsoftware.github.io/Xceed-Words-Samples/)
+[![See Demo](https://img.shields.io/badge/Simple_Live_Demo-▶-brightgreen)](https://xceedsoftware.github.io/Xceed-Words-Samples/)
 
-[![See Demo](https://img.shields.io/badge/Complex Live_Demo-▶-red)](https://xceedsoftware.github.io/BlazorDocx-public/wordsample)
+[![See Demo](https://img.shields.io/badge/Complex_Live_Demo-▶-red)](https://xceedsoftware.github.io/BlazorDocx-public/wordsample)
 
 ## Overview
 
